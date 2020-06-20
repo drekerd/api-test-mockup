@@ -1,0 +1,63 @@
+Here are some instructions
+
+
+You have all the following endpoints:
+
+=============================================
+{host}/authenticate
+This endpoint will give you a authorization token. It only requires a Body with id and role
+{
+    "id":1,
+    "role":"USER"
+}
+
+=============================================
+{host}/users/
+- get all users
+needs an apiKey and a jwt Token
+no body required
+
+=============================================
+{host}/users/user?id={id} ex: {host}/users/user?id=1
+- get specific user by ID provided as query parameter on the URL
+needs an apiKey and a jwt Token
+no body required
+
+=============================================
+{host}/users/user/create
+- create a new user
+needs an apiKey and a jwt Token
+needs a body
+{
+    "id":2,
+    "name":"Pedro",
+    "nif":"yournif",
+    "role":"USER/ADMIN"
+}
+nifs and ids should be unique
+
+=============================================
+{host}/users/user/update
+- Update an existing user
+needs an apiKey and a jwt Token
+needs a body
+{
+    "id":2,
+    "name":"Pedro",
+    "nif":"yournif",
+    "role":"USER/ADMIN"
+}
+nifs and ids should be unique
+
+=============================================
+{host}/users/user/delete
+- Delete an user
+needs an apiKey and a jwt Token
+body is required
+{
+    "id":2
+}
+
+=============================================
+TO READ THIS AGAIN JUST ACCESS
+{host}/users/hello/pedro
